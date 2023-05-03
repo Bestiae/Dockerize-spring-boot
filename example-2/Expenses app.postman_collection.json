@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "3b523960-77f8-4db1-8bc0-aff82a355268",
+		"name": "Expenses app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Add Person",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Myroslava Shevska\",\r\n    \"email\": \"miroslava.shevska@icloud.com\",\r\n    \"currency\": \"EUR\",\r\n    \"country\": \"Ukraine\",\r\n    \"owe\": 0,\r\n    \"lent\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/person/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/delete/13",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"delete",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Person by Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/get?country=China",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"get"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "China"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/get/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PersonShort by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Myroslava Shevska\",\r\n    \"email\": \"miroslava.shevska@icloud.com\",\r\n    \"currency\": \"EUR\",\r\n    \"country\": \"Ukraine\",\r\n    \"owe\": 0,\r\n    \"lent\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/person/get-short/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"get-short",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person by full-name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/full-name/?name=Myroslava Shevska",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"full-name",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Myroslava Shevska"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Number of Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/size",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"size"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Friend",
+			"item": [
+				{
+					"name": "Add Friend",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"friendOne\": {\r\n        \"id\": 1,\r\n        \"name\": \"Nico Robin\",\r\n        \"email\": \"ajenney0@samsung.com\",\r\n        \"currency\": \"EUR\",\r\n        \"country\": \"Palestinian Territory\",\r\n        \"owe\": 0,\r\n        \"lent\": 0\r\n    },\r\n    \"friendTwo\": {\r\n        \"id\": 11,\r\n        \"name\": \"Myroslav Khoma\",\r\n        \"email\": \"New_user@newUser.com\",\r\n        \"currency\": \"EUR\",\r\n        \"country\": \"UA\",\r\n        \"owe\": 0,\r\n        \"lent\": 0\r\n    },\r\n    \"expenses_id\": null,\r\n    \"id\": 14\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/friend/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"friend",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Friend by Ids",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/friend/add?friend_one=8&friend_two=7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"friend",
+								"add"
+							],
+							"query": [
+								{
+									"key": "friend_one",
+									"value": "8"
+								},
+								{
+									"key": "friend_two",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Friend",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/friend/delete/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"friend",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Friend",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/friend/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"friend",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Friends by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/friend/find/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"friend",
+								"find",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person Friends by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/friend/get-friends/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"friend",
+								"get-friends",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GroupVariety",
+			"item": [
+				{
+					"name": "Add GroupVariety",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require(\"moment\");\r",
+									"pm.globals.set(\"CurrentDateTime\", moment().format())\r",
+									"// not nedeed to make var for this purpose, 'cause in the table is set, that it will take current date"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupvar_name\": \"Test-community\",\r\n    \"expenses_done\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/group/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update GroupVariety",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupvar_name\": \"Nico-community\",\r\n    \"create_date\": \"2023-02-01T00:00:00\",\r\n    \"expenses_done\": false,\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/group/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/group/delete/43",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group",
+								"delete",
+								"43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List GroupVariety",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/group/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by GroupName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/group/find/Test-community",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group",
+								"find",
+								"Test-community"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GroupMember",
+			"item": [
+				{
+					"name": "Add GroupMember",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupvar\": {\r\n        \"groupvar_name\": \"Nico-community\",\r\n        \"create_date\": \"2023-02-01T00:00:00\",\r\n        \"expenses_done\": false,\r\n        \"id\": 1\r\n    },\r\n    \"person\": {\r\n        \"id\": 5,\r\n        \"name\": \"Monkey D. Garp\",\r\n        \"email\": \"mdulin4@toplist.cz\",\r\n        \"currency\": \"EUR\",\r\n        \"country\": \"China\",\r\n        \"owe\": 0,\r\n        \"lent\": 0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/group-member/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group-member",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete GroupMember",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/group-member/delete/8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group-member",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List GroupMember",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/group-member/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"group-member",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expenses",
+			"item": [
+				{
+					"name": "Add Expenses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Expenses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expenses",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Expenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Expenses by Payer Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/find-payer/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"find-payer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Expenses by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/find-category/Food",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"find-category",
+								"Food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Expenses by SplitType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/expenses/find-splitType/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenses",
+								"find-splitType",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
